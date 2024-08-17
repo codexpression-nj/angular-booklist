@@ -1,0 +1,42 @@
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex-direction: row;
+    padding: 26px;
+    margin: 10px;
+    align-content: center;
+    justify-content: center;
+    /* overflow-y: auto; */
+
+  }
+  
+  .book-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    height: auto;
+    background-color: #ffff;
+    text-align: center;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: 5px 5px 5px 0px rgb(205, 205, 205);
+    border: none;
+  }
+
+  .book-card img {
+    width: auto;
+    height: 150px;
+    object-fit:contain;
+  }
+  
+  .book-card:hover {
+    background-color: #f0f0f0;
+  }
+  .container {
+    display: flex;
+    /* height: 100vh; */
+    background-color: #EAEAEE;
+    overflow-y: auto;
+
+  }

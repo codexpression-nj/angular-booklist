@@ -1,0 +1,31 @@
+import { Component } from '@angular/core';
+import { Book, BookService } from '../../services/book.service';
+import { ActivatedRoute } from '@angular/router';
+import { NgIf } from '@angular/common';
+
+@Component({
+  selector: 'app-book-details',
+  standalone: true,
+  imports: [NgIf],
+  templateUrl: './book-details.component.html',
+  styleUrl: './book-details.component.css'
+})
+export class BookDetailsComponent {
+  book: Book | undefined;
+
+  constructor(
+    private route: ActivatedRoute,
+    private bookService: BookService
+  ) {}
+
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.bookService.getBooks().subscribe((books: Book[]) => {
+        this.book = books.find(book => book._id === +id);
+      });
+    }
+  }
+
+
+}

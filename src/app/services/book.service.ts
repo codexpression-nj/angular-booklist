@@ -3,14 +3,19 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Book {
-  author: string;
-  country: string;
-  imageLink: string;
-  language: string;
-  link: string;
-  pages: number;
+  _id:number
   title: string;
-  year: number;
+  isbn: string;
+  pageCount: number;
+  publishedDate: {
+    $date: string;
+  };
+  thumbnailUrl: string;
+  shortDescription: string;
+  longDescription: string;
+  status: string;
+  authors: string[];
+  categories: string[];
 }
 
 @Injectable({
@@ -19,7 +24,7 @@ export interface Book {
 
 export class BookService {
 
-  private dataUrl = './data.json';  
+  private dataUrl = 'assets/data.json';  
 
   constructor(private http:HttpClient) { }
 
