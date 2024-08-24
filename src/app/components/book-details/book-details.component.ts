@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Book, BookService } from '../../services/book.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -15,7 +15,9 @@ export class BookDetailsComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private bookService: BookService
+    private bookService: BookService,
+    private router: Router
+
   ) {}
 
   ngOnInit(): void {
@@ -27,5 +29,7 @@ export class BookDetailsComponent {
     }
   }
 
-
+  goBack(): void {
+    this.router.navigate(['/']);
+  }
 }
