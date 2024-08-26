@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 export interface Book {
   _id:number
@@ -31,4 +31,6 @@ export class BookService {
   getBooks():Observable<Book[]>{
     return this.http.get<Book[]>(this.dataUrl)
   }
+
+  
 }
