@@ -25,6 +25,7 @@ export class BookDetailsComponent {
     if (id) {
       this.bookService.getBooks().subscribe((books: Book[]) => {
         this.book = books.find(book => book._id === +id);
+        console.log(this.book);
       });
     }
   }

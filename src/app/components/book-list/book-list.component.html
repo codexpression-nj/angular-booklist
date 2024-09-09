@@ -1,7 +1,12 @@
 <div class="container">
       <div class="book-list">
-        <div class="book-card" *ngFor="let book of books" (click)="goToBookDetail(book)">
-          <img [src]="book.thumbnailUrl" alt="{{ book.title }}" />
+        <div
+         class="book-card" 
+         *ngFor="let book of books" 
+         (click)="goToBookDetail(book)"
+         [ngClass]="{'no-image': !book.thumbnailUrl}">
+         
+          <img *ngIf="book.thumbnailUrl" [src]="book.thumbnailUrl" alt="{{ book.title }}" />
           <p  style="flex-wrap: wrap;;">{{ book.title }}</p>
           <p style="color: #aaa;font-size: 0.8em;"> <strong>Authors:</strong> {{ book.authors.join(', ') }}</p>
         </div>

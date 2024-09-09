@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Book, BookService } from '../../services/book.service';
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [NgFor,NgIf],
+  imports: [NgFor,NgIf,NgClass],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.sass'
 })

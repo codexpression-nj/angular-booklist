@@ -22,6 +22,8 @@
     align-items: center;
     box-shadow: 5px 5px 5px 0px rgb(205, 205, 205);
     border: none;
+    transition: background-color 0.3s;
+
   }
 
   .book-card img {
@@ -39,4 +41,8 @@
     background-color: #EAEAEE;
     overflow-y: auto;
 
+  }.book-card.no-image {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
   }
