@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Book, BookService } from '../../services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { DatePipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-book-details',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf,DatePipe],
   templateUrl: './book-details.component.html',
   styleUrl: './book-details.component.css'
 })

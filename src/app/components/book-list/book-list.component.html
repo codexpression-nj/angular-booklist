@@ -4,9 +4,19 @@
          class="book-card" 
          *ngFor="let book of books" 
          (click)="goToBookDetail(book)"
-         [ngClass]="{'no-image': !book.thumbnailUrl}">
-         
-          <img *ngIf="book.thumbnailUrl" [src]="book.thumbnailUrl" alt="{{ book.title }}" />
+         >
+         <ng-container *ngIf="book.thumbnailUrl; else noImage">
+          <img [src]="book.thumbnailUrl" alt="{{ book.title }}" />
+        </ng-container>
+        
+        <ng-template #noImage>
+          <div class="placeholder">
+            <p>No Image Available</p>
+            <img src="assets/no_image.png"/>
+          </div>
+        </ng-template>
+
+          <!-- <img [ngClass]="{'no-image': !book.thumbnailUrl}" *ngIf="book.thumbnailUrl" [src]="book.thumbnailUrl" alt="{{ book.title }}" /> -->
           <p  style="flex-wrap: wrap;;">{{ book.title }}</p>
           <p style="color: #aaa;font-size: 0.8em;"> <strong>Authors:</strong> {{ book.authors.join(', ') }}</p>
         </div>

@@ -17,18 +17,22 @@ img{
 
 .title{
     font-size: 2em;
+    color: #5F8F9A;
 }
 
 .text{
     width: 30%;
     text-align: center;
-    color: #BEE0EB;
+    color: #D5A653;
 }
 .btn{
-    background-color: #196483;
+    background-color: #5F8F9A;
     color: white;
     height: 40px;
     width: 20%;
     border: none;
     border-radius: 15px;
 }
+button:hover {
+    background-color: #BEE0EB;
+  }

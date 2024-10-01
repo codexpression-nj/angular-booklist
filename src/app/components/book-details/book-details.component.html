@@ -1,7 +1,8 @@
 <div class="container">
-  <button (click)="goBack()">Back to List</button>
   
 <div *ngIf="book" class="book-detail">
+  <button  (click)="goBack()">Back to List</button>
+
   <h2>{{ book.title }}</h2>
    
     <div style="display: flex;">
@@ -11,12 +12,12 @@
         <p><strong>Authors:</strong> {{ book.authors.join(', ') }}</p>
         <p><strong>Categories:</strong> {{ book.categories.join(', ') }}</p>
         <p><strong>Page Count:</strong> {{ book.pageCount }}</p>
-        <p><strong>Published Date:</strong> {{ book.publishedDate.$date  }}</p>
+        <p><strong>Published Date:</strong> {{ book.publishedDate.$date | date:'short'  }}</p>
         <p><strong>Status:</strong> {{ book.status }}</p>
       </div>
     
     </div>
     <p style="font-weight: bold;">Description</p>
-    <p style="font-weight:lighter;">{{ book.longDescription }}</p>
+    <span style="font-weight: 200;font-size: 0.7em;">{{ book.longDescription }}</span>
   </div>
 </div>

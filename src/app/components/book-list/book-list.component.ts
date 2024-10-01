@@ -21,7 +21,6 @@ export class BookListComponent {
     this.bookService.getBooks().subscribe((data) =>{
       this.books = data
       console.log(data);
-      
     })
   }
   selectBook(book: Book): void {
